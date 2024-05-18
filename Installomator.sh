@@ -1,5 +1,5 @@
 #!/bin/zsh --no-rcs
-label="" # if no label is sent to the script, this will be used
+label="androidstudio" # if no label is sent to the script, this will be used
 
 # Installomator
 #
@@ -35,7 +35,7 @@ NOTIFY=success
 #   - all          all notifications (great for Self Service installation)
 
 # time in seconds to wait for a prompt to be answered before exiting the script
-PROMPT_TIMEOUT=86400
+PROMPT_TIMEOUT=300
 # Common times translated into seconds
 # 60    =  1 minute
 # 300   =  5 minutes
@@ -45,7 +45,7 @@ PROMPT_TIMEOUT=86400
 
 # behavior when blocking processes are found
 # BLOCKING_PROCESS_ACTION is ignored if app label uses updateTool
-BLOCKING_PROCESS_ACTION=tell_user
+BLOCKING_PROCESS_ACTION=prompt_user
 # options:
 #   - ignore       continue even when blocking processes are found
 #   - quit         app will be told to quit nicely if running
@@ -82,7 +82,7 @@ BLOCKING_PROCESS_ACTION=tell_user
 
 
 # logo-icon used in dialog boxes if app is blocking
-LOGO=appstore
+LOGO=jamf
 # options:
 #   - appstore      Icon is Apple App Store (default)
 #   - jamf          JAMF Pro
@@ -109,7 +109,7 @@ IGNORE_APP_STORE_APPS=no
 #                  Known bad example: Slack will lose all settings.
 
 # Owner of copied apps
-SYSTEMOWNER=0
+SYSTEMOWNER=1
 # options:
 #  - 0             Current user will be owner of copied apps, just like if they
 #                  installed it themselves (default).
@@ -169,7 +169,7 @@ DIALOG_LIST_ITEM_NAME=""
 # listitem.
 # When the variable is unset, progress will be sent to Swift Dialog's main progress bar.
 
-NOTIFY_DIALOG=0
+NOTIFY_DIALOG=1
 # If this variable is set to 1, then we will check for installed Swift Dialog v. 2 or later, and use that for notification
 
 
